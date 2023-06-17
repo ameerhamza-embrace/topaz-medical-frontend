@@ -1,0 +1,47 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Add Customer</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+    <div class="ml-5 mr-5">
+      <form [formGroup]="customerForm" (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Patient Name</label>
+          <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+            placeholder="Enter Patient Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Phone Number</label>
+          <input type="tel" formControlName="phoneNumber" class="form-control" id="exampleInputPassword1"
+            placeholder="Phone Number">
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="Country" class="custom-select mb-3" formControlName="dept">
+            <option class="dropdown-item" [value]="">Acti</option>
+            <option class="dropdown-item" [value]="">Another ac</option>
+            <option class="dropdown-item" [value]="">Something e</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Doctor Name</label>
+          <select id="doctor" name="Country" class="custom-select mb-3" formControlName="dr_name">
+            <option class="dropdown-item" [value]="">Acti</option>
+            <option class="dropdown-item" [value]="">Another ac</option>
+            <option class="dropdown-item" [value]="">Something e</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>

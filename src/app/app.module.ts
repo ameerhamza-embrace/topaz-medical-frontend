@@ -1,3 +1,5 @@
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -35,6 +37,11 @@ import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AddCustomerComponent } from './pages/add-customer/add-customer.component';
+
+
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -61,7 +68,9 @@ registerLocaleData(localeEn, 'en-EN');
         SubMenuComponent,
         MenuItemComponent,
         ControlSidebarComponent,
-        SidebarSearchComponent
+        SidebarSearchComponent,
+        CustomersComponent,
+        AddCustomerComponent
     ],
     imports: [
         BrowserModule,
@@ -75,9 +84,10 @@ registerLocaleData(localeEn, 'en-EN');
             positionClass: 'toast-top-right',
             preventDuplicates: true
         }),
-        ProfabricComponentsModule
+        ProfabricComponentsModule,
+        NgxDatatableModule,
     ],
-    providers: [],
+    
     bootstrap: [AppComponent]
 })
 export class AppModule {}
